@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+<meta charset="UTF-8">
+<title>知湖</title>
+<meta http-equiv="Content-Type"content="text/html;charset=utf-8"/>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet"href="css/index.css">
+<script type="taxt/javascript">
+var _pag =_pag||[];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking'])
+(function(){
+	var u="//count.is1701.top/";
+	_paq.push(['setTrackerUrl',u+'piwik.php']);
+    _paq.push(['setSiteId','12']);
+    var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';g.async=true;g.defer=true;g.src=u+'piwik.js';s.parentNode.insertBefore(g,s);
+})();
+</script>
+</head>
+<body>
+<header>
+  <button class="head-btn" id="0">
+     <img src="img/home-chosen.svg" class="btn-img">
+     <span href="#">首页</span>
+  </button>
+  <span>|</span>
+  <button class="head-btn" id="1">
+      <img src="img/activity.svg" class="btn-img">
+      <span>活动</span>
+  </button>
+  <span>|</span>
+  <buttton class="head-btn" id="2">
+       <img src="img/lectures.svg" class="btn-img">
+       <span>讲座</span>
+  </button>
+  <span>|</span>
+  <button class="head-btn" id="3">
+       <img src="img/notif.svg" class="btn-img">
+       <span>通知</span>
+   </button>
+</header>
+
+<div id="actlist" class="content">
+</div>
+<div id="source_act" class="">
+    <div id="source_header"></div>
+<div>
+<div id="detail">
+    <div id="briefs"></div>
+    <div id="text"> </div>
+</div>
+<form id='edit' enctype="multipart/form-data”></form>
+<div id="submit">
+    <img id='im'  src="img/submit.svg" alt="">
+</div>
+<div id="alert">
+    <span id="alert-content"></span>
+</div>
+<button id="btnl">
+     <span>确认</span>
+</button>
+<footer id="loading">正在加载中...</footer>
+
+<script type="text/javascript" src="js/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="htt://res.wx.qq.com/open/js/jweixin-1.2.0.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/main.js" charset="UTF-8"></script>
+<script>
+    var gotSign=false;
+    var shareConfig={
+       get link(){return window.location.href;},
+       get title(){return document.title;},//分享标题
+       get desc(){
+       //返回活动详情头部
+       if(window.location.href.indexOf("#")!== -1){
+       return $('#text').text()
+       }else{
+       return'点击查看知湖活动’；
+       }
+       }，
+       imgUrl:window.location.origin+"/zhihu/img/touch-icon-ipad.png",
+       success:function(){
+       //用户确认分享后执行的回调函数
+       }，
+       cancel：function（）{
+       用户取消分享后执行的回调函数
+       }
+
+    }，
+    $.a.jax({
+      url:'./jssdk/index.php',
+      type:'POST',
+      data:{
+      url:window.location.href.split('#')[0]
+      },
+      dataType:'json',
+      success:function(data,status){
+      if(status==='success'){
+        gotSign = true;
+        data.debug = false;
+        data.jsApiList = [
+        "onMenuShareQQ",
+        "OnMenuShareTieline",
+        "OnMenuShareAppMessage",
+        "OnMenuShareWeibo",
+        "OnMenuShareQZone"
+        ];
+        wx.config(data);
+        wx.ready(function({
+          gotSign = true;
+                wx.onMenuShareQQ(shareConfig);
+                wx.onMenuShareTimeline(shareConfig);
+                wx.onMenuShareAppMessage(shareConfig);
+                wx.onMenuShareWeibo(shareConfig);
+                wx.onMenuShareQZone(shareConfig);
+        }))
+      }
+      }
+    });
+    </script>
+</body>
+
+<html>
