@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>作业3</title>
+	<style type="text/css">
+		#demo
+		{
+			background-image: url(./image/yejing.jpg );
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+			height: 700px;
+			width: 1550px;
+		}
+		.a
+		{
+			font-size: 30px;
+			color: white;
+		}
+		.b
+		{
+			font-size: 14px;
+			color: white;
+		}
+		.c
+		{
+			position: relative;
+			top: 150px;
+			right: 500px;
+		}
+	</style>
+</head>
+<body  id="demo">
+	<p class="a">查找世界城市活动信息</p>
+	<p class="b">每个城市有不同的活动信息，请资助查询您所需要了解的城市</p>
+	<form action="show.jsp" method="post" class="c">
+		<select name="country">
+			<option value="中国" selected="selected">中国</option>
+			<option value="日本">日本</option>
+			<option value="英国">英国</option>
+			<option value="西班牙">西班牙</option>
+		</select>
+		
+	</form>
+
+</body>
+</html>
