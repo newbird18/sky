@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>作业6</title>
+	<style type="text/css">
+		#content
+		{
+			height: 700px;
+			margin: 0px;
+		}
+		#left
+		{
+			color: grey;
+			height: 700px;
+			width: 20%;
+			background-color:  #FA8072;
+			float: left;
+		}
+		#right
+		{
+			height: 700px;
+			width: 80%;
+			background-color: #D3D3D3;
+			float: right;
+		}
+		#one
+		{
+			margin: 0px;
+			border: 2px solid grey;
+			background-color: white;
+			height: 500px;
+			width: 350px;
+			position: relative;
+			top: 80px;
+			left: 70px;
+			float: left;
+		}
+		#two
+		{
+			margin: 0px;
+			border: 2px solid grey;
+			height: 500px;
+			width: 700px;
+			background-color: white;
+			position: relative;
+			top: 80px;
+			right: 80px;
+			float: right;
+		}
+		#a
+		{
+			text-align: center;
+			height: 50px;
+			position: relative;
+			top: 20px;
+		}
+	</style>
+	<style >
+		.progressbar
+		{
+			float: left;
+			width: 200px;
+		}
+		.progressbar div
+		{
+			display: block;
+			background-color:#D3D3D3;
+			height: 15px;
+			line-height: 15px;
+		}
+	</style>
+</head>
+<body id="content">
+	<div id="left"></div>
+	<div id="right">
+		<div id="one">
+			<div style="background-color: #D3D3D3;color: grey;height: 30px; ">日历</div>
+			<div>
+				<div id="a" >
+					<form action="show.jsp" method="post">
+						<select name="year">
+							<option value="2017年" selected="selected">2017年</option>
+							<option value="2016年"> 2016年</option>
+							<option value="2015年"> 2015年</option>
+						</select>
+						<select name="month">
+							<option value="6月" selected="selected">6月</option>
+							<option value="5月">5月</option>
+							<option value="4月">4月</option>
+						</select>
+						<select name="day">
+							<option value="1号" selected="selected">1号</option>
+							<option value="2号">2号</option>
+							<option value="3号">3号</option>
+						</select>
+						<select name="return">
+							<option value="返回"i selected="selected">返回</option>
+							<option value="确定">确定</option>
+						</select>
+					</form>
+				</div>
+					<hr/>
+					<table  frame="void" style="text-align: right; width: 325px;height: 300px;" >
+						<tr style="color: #D3D3D3 ">
+							<th>一</th>
+							<th>二</th>
+							<th>三</th>
+							<th>四</th>
+							<th>五</th>
+							<th>六</th>
+							<th>七</th>
+						</tr>
+						<tr>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td> </td>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+							<td>15</td>
+							<td>16</td>
+							<td>17</td>
+						</tr>
+						<tr>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+							<td>22</td>
+							<td>23</td>
+							<td>24</td>
+						</tr>
+						<tr>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+							<td>29</td>
+							<td>30</td>
+							<td>31</td>
+						</tr>
+					</table>
+			</div>
+		</div>
+		<div id="two">
+			<div  style="background-color: #D3D3D3;color: grey;height: 30px;">汽车行业品牌榜</div>
+			<div >
+				<table  style="height: 400px;width: 600px ; border-collapse:collapse ; position: relative;top: 30px;left: 50px;text-align: center;" border="1" >
+					<tr>
+						<th>排名</th>
+						<th>品牌</th>
+						<th>搜索指数</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>大众</td>
+						<td><div class="progressbar">
+								<div style="width: 84%;" ></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>别克</td>
+						<td>
+							<div class="progressbar" style="width: 50%;">
+								<div style="width:78%;"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>奔驰</td>
+						<td>
+							<div class="progressbar">
+								<div  style="width: 61%;" ></div>
+							</div> 
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>起亚</td>
+						<td>
+							<div class="progressbar" >
+								 <div  style="width: 50%;"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>现代</td>
+						<td>
+							<div class="progressbar">
+								<div style="width: 45%;"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>丰田</td>
+						<td>
+							<div class="progressbar" >
+								 <div  style="width: 30%;"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>奥迪</td>
+						<td>
+							<div class="progressbar" >
+								 <div  style="width: 27%;"></div>
+							</div> 
+						</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>本田</td>
+						<td>
+							<div class="progressbar" >
+								<div  style="width: 20%;"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
